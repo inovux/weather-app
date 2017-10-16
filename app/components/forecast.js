@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import queryString from 'query-string';
+import Api from '../utils/api';
 
-const Forecast = props => {
-  return (
-    <div>The forecast</div>
-  );
+export default class Forecast extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      forecast: null
+    };
+  }
+
+  componentDidMount() {
+    const currentCity = queryString.parse(this.props.location.search).city;
+
+    Api.getWeather(currentCity)
+    .then(function(data) {
+      this.setState({
+        forecast: data
+      });
+    }.bind(this));
+  }
+
+  render() {
+    if(!this.state.forecast) {
+      return (
+        <div className="forecast-details">
+          <h2>Loading</h2>
+        </div>
+      );
+    }
+    return (
+      <div className="forecast-details">
+        <h2>{this.state.forecast.city.name}</h2>
+      </div>
+    );
+  }
 };
-
-export default Forecast;

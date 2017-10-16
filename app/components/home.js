@@ -6,7 +6,7 @@ const Home = props => {
     <main className='home'>
       <section className="weather-selection">
         <h2>Enter a City and State</h2>
-        <WeatherForm />
+        <WeatherForm onSubmitCity={props.onSubmitCity} />
       </section>
     </main>
   );

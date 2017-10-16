@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class WeatherForm extends Component {
   constructor(props) {
@@ -17,18 +18,25 @@ export default class WeatherForm extends Component {
 
   render() {
     return (
-      <form className="weather-form">
+      <div className="weather-form">
         <input
           className="weather-input"
           placeholder="St. George, Utah"
           value={this.state.city}
           onChange={this.onInputChange}
         />
-        <button
+        <Link
           type="submit"
           className="weather-button"
-        >Get Weather</button>
-      </form>
+          to={{
+            pathname: '/forecast',
+            search: `?city=${this.state.city}`
+          }}
+          onClick={() => {
+            this.onSubmitCity(this.state.city);
+          }}
+        >Get Weather</Link>
+      </div>
     );
   }
 }

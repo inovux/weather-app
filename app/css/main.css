@@ -104,3 +104,14 @@ body,
   padding: 10px 20px;
   text-decoration: none;
 }
+
+.forecast-details {
+  padding: 20px 0;
+}
+
+.forecast-details h2 {
+  text-align: center;
+  font-family: montserrat, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
