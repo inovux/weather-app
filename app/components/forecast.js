@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import Api from '../utils/api';
+import ForecastItem from './forecast-item';
 
 export default class Forecast extends Component {
   constructor(props) {
@@ -33,6 +34,13 @@ export default class Forecast extends Component {
     return (
       <div className="forecast-details">
         <h2>{this.state.forecast.city.name}</h2>
+        <ul className="forecast-list">
+          {this.state.forecast.list.map(item => {
+            return (
+              <ForecastItem key={item.dt} forecast={item} />
+            );
+          })}
+        </ul>
       </div>
     );
   }

@@ -115,3 +115,30 @@ body,
   font-size: 40px;
   font-weight: 400;
 }
+
+.forecast-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: space-between;
+}
+
+.forecast-list li {
+  list-style-type: none;
+  margin: 35px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.forecast-list img {
+  height: 130px;
+}
+
+.forecast-list p {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
