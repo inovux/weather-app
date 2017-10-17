@@ -8,9 +8,10 @@ const ForecastItem = props => {
   const month = moment()._locale._monthsShort[date.month()];
   const day = date.date();
 
+  const src = require(`../images/${props.forecast.weather[0].icon}.svg`);
   return (
     <li>
-      <img src={`app/images/${props.forecast.weather[0].icon}.svg`} />
+      <img src={src} />
       <p>{`${weekDay}, ${month} ${day}`}</p>
     </li>
   );

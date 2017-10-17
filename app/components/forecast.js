@@ -16,11 +16,11 @@ export default class Forecast extends Component {
     const currentCity = queryString.parse(this.props.location.search).city;
 
     Api.getWeather(currentCity)
-    .then(function(data) {
+    .then((data) => {
       this.setState({
         forecast: data
       });
-    }.bind(this));
+    }
   }
 
   render() {
