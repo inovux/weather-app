@@ -6,7 +6,7 @@ const ForecastItem = props => {
   const date = moment.unix(props.forecast.dt);
   const weekDay = moment()._locale._weekdays[date.day()];
   const month = moment()._locale._monthsShort[date.month()];
-  const day = date.date()
+  const day = date.date();
 
   return (
     <li>
